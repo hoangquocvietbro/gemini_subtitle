@@ -7,9 +7,9 @@ const fs = require('fs');
 
 // Server configuration
 const PORT = process.env.PORT || 3007; // Changed from 3004 to avoid port conflicts
-const SERVER_URL = process.env.BACKEND_URL+''; // Using IPv4 address for better compatibility
+const SERVER_URL = process.env.REACT_APP_BACKEND_URL+''; // Using IPv4 address for better compatibility
 // Allow both localhost and 127.0.0.1 for development
-const CORS_ORIGIN = process.env.NODE_ENV === 'production' ? '*' : [process.env.FRONTEND_URL, process.env.BACKEND_URL];
+const CORS_ORIGIN = process.env.NODE_ENV === 'production' ? '*' : [process.env.REACT_APP_FRONTEND_URL, process.env.REACT_APP_BACKEND_URL];
 
 // Directory paths
 let VIDEOS_DIR, SUBTITLES_DIR, NARRATION_DIR;

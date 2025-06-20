@@ -62,14 +62,14 @@ export const convertAudioToVideo = async (audioFile, onStatusUpdate = null) => {
 
 
         // Check if we already have a converted version of this audio file
-        const checkResponse = await fetch(`process.env.BACKEND_URL/api/converted-audio-exists/${audioHash}`);
+        const checkResponse = await fetch(`process.env.REACT_APP_BACKEND_URL/api/converted-audio-exists/${audioHash}`);
         const checkResult = await checkResponse.json();
 
         if (checkResult.exists) {
 
 
             // Fetch the existing converted video
-            const videoUrl = `process.env.BACKEND_URL${checkResult.video}`;
+            const videoUrl = `process.env.REACT_APP_BACKEND_URL${checkResult.video}`;
             const videoResponse = await fetch(videoUrl);
             const videoBlob = await videoResponse.blob();
 
@@ -90,7 +90,7 @@ export const convertAudioToVideo = async (audioFile, onStatusUpdate = null) => {
 
 
         // Call the server endpoint to convert audio to video
-        const response = await fetch(process.env.BACKEND_URL+'/api/convert-audio-to-video', {
+        const response = await fetch(process.env.REACT_APP_BACKEND_URL+'/api/convert-audio-to-video', {
             method: 'POST',
             body: audioFile,
             headers: {
@@ -106,7 +106,7 @@ export const convertAudioToVideo = async (audioFile, onStatusUpdate = null) => {
 
 
         // Fetch the converted video as a blob
-        const videoUrl = `process.env.BACKEND_URL${result.video}`;
+        const videoUrl = `process.env.REACT_APP_BACKEND_URL${result.video}`;
         const videoResponse = await fetch(videoUrl);
         const videoBlob = await videoResponse.blob();
 

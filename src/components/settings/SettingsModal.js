@@ -426,7 +426,7 @@ const SettingsModal = ({ onClose, onSave, apiKeysSet, setApiKeysSet }) => {
       localStorageData.genius_token = geniusApiKey;
 
       // Send to server
-      const response = await fetch(process.env.BACKEND_URL+'/api/save-local-storage', {
+      const response = await fetch(process.env.REACT_APP_BACKEND_URL+'/api/save-local-storage', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

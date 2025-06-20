@@ -139,7 +139,7 @@ const generateImage = async (req, res) => {
       } catch (error) {
         // If that fails, try to fetch it as a URL
 
-        const absoluteUrl = `process.env.BACKEND_URL${albumArtUrl.startsWith('/') ? '' : '/'}${albumArtUrl}`;
+        const absoluteUrl = `process.env.REACT_APP_BACKEND_URL${albumArtUrl.startsWith('/') ? '' : '/'}${albumArtUrl}`;
 
         try {
           const response = await fetch(absoluteUrl);
@@ -150,7 +150,7 @@ const generateImage = async (req, res) => {
         } catch (fetchError) {
 
           // Try one more time with /public prefix
-          const publicUrl = `process.env.BACKEND_URL/public${albumArtUrl.startsWith('/') ? '' : '/'}${albumArtUrl}`;
+          const publicUrl = `process.env.REACT_APP_BACKEND_URL/public${albumArtUrl.startsWith('/') ? '' : '/'}${albumArtUrl}`;
 
           const publicResponse = await fetch(publicUrl);
           if (!publicResponse.ok) {

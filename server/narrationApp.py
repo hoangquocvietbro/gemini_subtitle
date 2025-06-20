@@ -3,7 +3,7 @@ import sys
 import logging
 from flask import Flask, request, jsonify
 from flask_cors import CORS
-frontend_url = os.environ.get('FRONTEND_URL')
+REACT_APP_FRONTEND_URL = os.environ.get('REACT_APP_FRONTEND_URL')
 # Add the current directory to the path so we can import narration_service
 sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 from narration_service import narration_bp
@@ -15,14 +15,14 @@ logger = logging.getLogger(__name__)
 # Create Flask app
 app = Flask(__name__)
 # Configure CORS to allow requests from the frontend origin with credentials
-CORS(app, resources={r"/*": {"origins": ["http://localhost:3008", "http://127.0.0.1:3008",frontend_url], "supports_credentials": True}}, allow_headers=["Content-Type", "Authorization", "Accept"])
+CORS(app, resources={r"/*": {"origins": ["http://localhost:3008", "http://127.0.0.1:3008",REACT_APP_FRONTEND_URL], "supports_credentials": True}}, allow_headers=["Content-Type", "Authorization", "Accept"])
 
 # Add CORS headers to all responses
 @app.after_request
 def add_cors_headers(response):
     # Check the request origin and set the appropriate CORS header
     request_origin = request.headers.get('Origin')
-    allowed_origins = ['http://localhost:3008', 'http://127.0.0.1:3008',frontend_url]
+    allowed_origins = ['http://localhost:3008', 'http://127.0.0.1:3008',REACT_APP_FRONTEND_URL]
 
     if request_origin in allowed_origins:
         response.headers.add('Access-Control-Allow-Origin', request_origin)

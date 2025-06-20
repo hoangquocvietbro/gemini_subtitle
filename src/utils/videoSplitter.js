@@ -3,7 +3,7 @@
  */
 
 // Server URL for the local server
-const SERVER_URL = process.env.BACKEND_URL+''; // Changed from 3004 to match server port
+const SERVER_URL = process.env.REACT_APP_BACKEND_URL+''; // Changed from 3004 to match server port
 
 /**
  * Upload a media file (video or audio) to the server and split it into segments

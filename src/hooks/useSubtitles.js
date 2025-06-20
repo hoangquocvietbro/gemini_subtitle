@@ -42,7 +42,7 @@ export const useSubtitles = (t) => {
 
     const checkCachedSubtitles = async (cacheId) => {
         try {
-            const response = await fetch(`process.env.BACKEND_URL/api/subtitle-exists/${cacheId}`);
+            const response = await fetch(`process.env.REACT_APP_BACKEND_URL/api/subtitle-exists/${cacheId}`);
             const data = await response.json();
             return data.exists ? data.subtitles : null;
         } catch (error) {
@@ -53,7 +53,7 @@ export const useSubtitles = (t) => {
 
     const saveSubtitlesToCache = async (cacheId, subtitles) => {
         try {
-            const response = await fetch(process.env.BACKEND_URL+'/api/save-subtitles', {
+            const response = await fetch(process.env.REACT_APP_BACKEND_URL+'/api/save-subtitles', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

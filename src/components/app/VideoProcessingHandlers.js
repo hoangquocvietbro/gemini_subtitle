@@ -302,7 +302,7 @@ export const downloadAndPrepareYouTubeVideo = async (
             }
 
             // Fetch the video directly from the server
-            const serverUrl = process.env.BACKEND_URL+'';
+            const serverUrl = process.env.REACT_APP_BACKEND_URL+'';
             const directResponse = await fetch(`${serverUrl}/videos/${videoId}.mp4?t=${Date.now()}`, {
               method: 'GET',
               cache: 'no-cache'
@@ -360,7 +360,7 @@ export const downloadAndPrepareYouTubeVideo = async (
               const videoId = selectedVideo.id;
 
               // Fetch the video directly from the server
-              const serverUrl = process.env.BACKEND_URL+'';
+              const serverUrl = process.env.REACT_APP_BACKEND_URL+'';
               const retryResponse = await fetch(`${serverUrl}/videos/${videoId}.mp4?t=${Date.now()}`, {
                 method: 'GET',
                 cache: 'no-cache'
@@ -407,7 +407,7 @@ export const downloadAndPrepareYouTubeVideo = async (
           const videoId = selectedVideo.id;
 
           // Fetch the video directly from the server
-          const serverUrl = process.env.BACKEND_URL+'';
+          const serverUrl = process.env.REACT_APP_BACKEND_URL+'';
           const retryResponse = await fetch(`${serverUrl}/videos/${videoId}.mp4?t=${Date.now()}`, {
             method: 'GET',
             cache: 'no-cache'
