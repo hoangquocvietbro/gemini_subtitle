@@ -11,7 +11,7 @@ const downloadQueue = {};
 const activeDownloadIntervals = {};
 
 // Server URL for the local YouTube download server
-const SERVER_URL = 'process.env.BACKEND_URL'; // Changed from 3004 to match server port
+const SERVER_URL = process.env.BACKEND_URL+''; // Changed from 3004 to match server port
 
 /**
  * Starts downloading a YouTube video to the local videos folder

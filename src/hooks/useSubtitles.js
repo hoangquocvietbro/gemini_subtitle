@@ -53,7 +53,7 @@ export const useSubtitles = (t) => {
 
     const saveSubtitlesToCache = async (cacheId, subtitles) => {
         try {
-            const response = await fetch('process.env.BACKEND_URL/api/save-subtitles', {
+            const response = await fetch(process.env.BACKEND_URL+'/api/save-subtitles', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

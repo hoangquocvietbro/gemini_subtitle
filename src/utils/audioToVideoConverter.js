@@ -90,7 +90,7 @@ export const convertAudioToVideo = async (audioFile, onStatusUpdate = null) => {
 
 
         // Call the server endpoint to convert audio to video
-        const response = await fetch('process.env.BACKEND_URL/api/convert-audio-to-video', {
+        const response = await fetch(process.env.BACKEND_URL+'/api/convert-audio-to-video', {
             method: 'POST',
             body: audioFile,
             headers: {

@@ -427,7 +427,7 @@ const LyricsDisplay = ({
       }
 
       // Save to cache
-      const response = await fetch('process.env.BACKEND_URL/api/save-subtitles', {
+      const response = await fetch(process.env.BACKEND_URL+'/api/save-subtitles', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

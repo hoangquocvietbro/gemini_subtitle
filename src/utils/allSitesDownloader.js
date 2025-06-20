@@ -9,7 +9,7 @@ const downloadQueue = {};
 const activeDownloadIntervals = {};
 
 // Server URL for the local download server
-const SERVER_URL = 'process.env.BACKEND_URL';
+const SERVER_URL = process.env.BACKEND_URL+'';
 
 /**
  * Check if a video is already downloaded

@@ -3,10 +3,10 @@
  */
 
 // API base URL for server requests - using IPv4 for better compatibility
-export const API_BASE_URL = 'process.env.BACKEND_URL/api';
+export const API_BASE_URL = process.env.BACKEND_URL+'/api';
 
 // Server URL for direct server requests (without /api) - using IPv4 for better compatibility
-export const SERVER_URL = 'process.env.BACKEND_URL';
+export const SERVER_URL = process.env.BACKEND_URL+'';
 
 // Gemini API key for direct API calls
 // This should be loaded from environment variables in production
