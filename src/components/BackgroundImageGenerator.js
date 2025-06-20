@@ -55,7 +55,7 @@ const BackgroundImageGenerator = ({ lyrics, albumArt, songName, isExpanded = fal
     setError('');
 
     try {
-      const response = await fetch('http://127.0.0.1:3007/api/gemini/generate-prompt', {
+      const response = await fetch('process.env.BACKEND_URL/api/gemini/generate-prompt', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -122,7 +122,7 @@ const BackgroundImageGenerator = ({ lyrics, albumArt, songName, isExpanded = fal
 
       for (let i = 0; i < imagesToGenerate; i++) {
         try {
-          const response = await fetch('http://127.0.0.1:3007/api/gemini/generate-image', {
+          const response = await fetch('process.env.BACKEND_URL/api/gemini/generate-image', {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json',
@@ -351,7 +351,7 @@ const BackgroundImageGenerator = ({ lyrics, albumArt, songName, isExpanded = fal
           setIsGeneratingPrompt(true);
 
 
-          const promptResponse = await fetch('http://127.0.0.1:3007/api/gemini/generate-prompt', {
+          const promptResponse = await fetch('process.env.BACKEND_URL/api/gemini/generate-prompt', {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json',
@@ -384,7 +384,7 @@ const BackgroundImageGenerator = ({ lyrics, albumArt, songName, isExpanded = fal
           // Generate image with the unique prompt
 
 
-          const imageResponse = await fetch('http://127.0.0.1:3007/api/gemini/generate-image', {
+          const imageResponse = await fetch('process.env.BACKEND_URL/api/gemini/generate-image', {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json',

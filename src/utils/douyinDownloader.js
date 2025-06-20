@@ -9,7 +9,7 @@ const downloadQueue = {};
 const activeDownloadIntervals = {};
 
 // Server URL for the local download server
-const SERVER_URL = 'http://localhost:3007';
+const SERVER_URL = 'process.env.BACKEND_URL';
 
 /**
  * Starts downloading a Douyin video to the local videos folder

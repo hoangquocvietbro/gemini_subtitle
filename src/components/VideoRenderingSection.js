@@ -504,7 +504,7 @@ const VideoRenderingSection = ({
         }));
 
         // Call the same endpoint as refresh narration button
-        const response = await fetch(`http://localhost:3007/api/narration/download-aligned`, {
+        const response = await fetch(`process.env.BACKEND_URL/api/narration/download-aligned`, {
           method: 'POST',
           mode: 'cors',
           credentials: 'include',
@@ -655,7 +655,7 @@ const VideoRenderingSection = ({
       }
 
       // Call the same endpoint as refresh narration button
-      const response = await fetch(`http://localhost:3007/api/narration/download-aligned`, {
+      const response = await fetch(`process.env.BACKEND_URL/api/narration/download-aligned`, {
         method: 'POST',
         mode: 'cors',
         credentials: 'include',

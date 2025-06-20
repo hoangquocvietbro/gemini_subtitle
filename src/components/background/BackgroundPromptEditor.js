@@ -22,7 +22,7 @@ const BackgroundPromptEditor = ({ isOpen, onClose }) => {
     if (isOpen) {
       const fetchPrompts = async () => {
         try {
-          const response = await fetch('http://127.0.0.1:3007/api/gemini/get-prompts');
+          const response = await fetch('process.env.BACKEND_URL/api/gemini/get-prompts');
           if (response.ok) {
             const data = await response.json();
             if (data.promptOne) setPromptOne(data.promptOne);
@@ -75,7 +75,7 @@ const BackgroundPromptEditor = ({ isOpen, onClose }) => {
   const handleSave = async () => {
     try {
       // Save the prompts to the server
-      const response = await fetch('http://127.0.0.1:3007/api/settings/update-prompts', {
+      const response = await fetch('process.env.BACKEND_URL/api/settings/update-prompts', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
